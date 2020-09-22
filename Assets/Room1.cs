@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Room1 : MonoBehaviour {
-    public string namePlayer;
-    public string nameObstaculo;
     public Button escena0;
     public Button load1;
     public Button unload1;
@@ -15,7 +13,7 @@ public class Room1 : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
-        Controller.controller.LoadAsset ("player");
+        Controller.controller.LoadAsset (Controller.controller.namePlayer);
         objstaculs = new List<GameObject> ();
 
         escena0.onClick.AddListener (() => {
@@ -28,7 +26,7 @@ public class Room1 : MonoBehaviour {
             Controller.controller.UnloadBundle ("obstaculo");
         });
         loadObs.onClick.AddListener (() => {
-            objstaculs.Add (Controller.controller.LoadAsset ("gameobject"));
+            objstaculs.Add (Controller.controller.LoadAsset (Controller.controller.nameObstaculo));
         });
         destroyObs.onClick.AddListener (() => {
             DestroyObjs ();

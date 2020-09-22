@@ -8,6 +8,10 @@ public class Controller : MonoBehaviour {
     public string[] bundleList;
     public string[] pathList;
     public List<AssetBundle> bundles;
+
+    [Header("Load Assets")]
+    public string namePlayer;
+    public string nameObstaculo;
     private string bundlePath;
     private void Awake () {
         if (controller == null) {
