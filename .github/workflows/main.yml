@@ -20,12 +20,12 @@ jobs:
           key: Library
 
       # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Run tests
+      #  uses: game-ci/unity-test-runner@v2
+      #  env:
+      #    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      #  with:
+      #    githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
       - name: Build project
@@ -34,6 +34,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: WebGL
+          unityVersion: 2018.4.9f1
 
       # Output
       - uses: actions/upload-artifact@v2
